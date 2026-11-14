@@ -4,6 +4,24 @@
 
 # README #
 
+本fork添加了编译YK-L1或YK-L1C版本
+在ubuntu22.04下编译，使用如下命令添加依赖
+apt install -y unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
+fakeroot kmod cpio git python3-docutils gettext automake autopoint \
+texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
+libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
+
+安装教程编译工具链
+cd /opt/rt-n56u/toolchain-mipsel
+sh dl_toolchain.sh
+
+然后复制配置文件
+cd /opt/tr-n56u/trunk
+cp configs/templates/YK-L1.config .config
+
+执行编译
+fakeroot ./build_firmware_modify YK-L1
+
 Welcome to the rt-n56u project
 
 This project aims to improve the rt-n56u and other supported devices on the software part, allowing power user to take full control over their hardware.

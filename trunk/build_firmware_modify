@@ -472,6 +472,8 @@ fi
 # fi
 #######################################################################
 if [ "$CONFIG_WITHOUT_KERNEL" != "y" ] ; then
+echo --------------------------KERNEL-OLDCONFIG------------------------
+make -C "$CONFIG_LINUXDIR" oldnoconfig || true
 echo --------------------------MAKE-DEP--------------------------------
 make dep
 fi
